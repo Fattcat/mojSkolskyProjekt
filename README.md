@@ -1,4 +1,4 @@
-# Môj projekt pre SOŠ: ESP8266 Smart Flowerpot
+# Môj projekt pre SOŠ: ESP8266 Smart Kvetinac
 
 ## Zariadenia
 - ESP8266 (NodeMCU alebo iný modul)
