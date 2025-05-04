@@ -11,6 +11,7 @@
 
 ### 1. TFT ST7789 – ESP8266
 - Piny v zátvorke sú pre čip, nie pre nás :D
+
 | Komponent          | ESP8266 pin     | Popis                              |
 |--------------------|-----------------|----------------------------------- |
 | **LED**            | 3.3V            | Podsvietenie LED diód (prepojka)   |
