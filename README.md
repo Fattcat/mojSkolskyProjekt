@@ -66,6 +66,9 @@
 
 ---
 
+## Fotka esp8266 pinov
+![esp8266](esp8266-Piny.png)
+
 ## Tipy na doladenie
 1. **EEPROM** – môžeš si uložiť nastavenie `wateringAmount` a načítať ho po reštarte.  
 2. **Tlačidlá** – pridaj 2–3 tlačidlá (UP/DOWN/ENTER) napr. na D8, D0, D3 a umožni meniť množstvo vody cez menu.  
