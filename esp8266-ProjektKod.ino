@@ -1,5 +1,5 @@
 // Smart Flowerpot - Arduino IDE (ESP8266 + TFT ST7789)
-// Autor: [Tvoje meno], projekt pre PČOZ maturitu
+// Autor: Dominik, projekt pre PČOZ maturitu
 
 #include <Adafruit_GFX.h>
 #include <Adafruit_ST7789.h>
@@ -62,9 +62,9 @@ void loop() {
   int soil = analogRead(MOISTURE_PIN);
 
   // Update sensor boxes on the display
-  drawSensorBox(10,  60, 100, 60, "Temp", String(temp, 1) + " C");
-  drawSensorBox(130, 60, 100, 60, "Hum",  String(humidity, 1) + " %");
-  drawSensorBox(10, 130, 220, 60, "Soil", String(soil));
+  drawSensorBox(10,  60, 100, 60, "    Teplota", String(temp, 1) + " C");
+  drawSensorBox(130, 60, 100, 60, "    Vlhkost",  String(humidity, 1) + " %");
+  drawSensorBox(10, 130, 220, 60, "    Puoda", String(soil));
 
   // Automatic watering if soil moisture is low
   if (soil > 800) {
@@ -93,7 +93,7 @@ void drawMainMenu() {
   tft.setTextColor(ST77XX_WHITE);
   tft.setTextSize(1);
   tft.setCursor(15, 35);
-  tft.println("Temp  Humidity  Soil");
+  tft.println("Teplota  Vlhkost  Puoda");
 }
 
 // Draw a labeled box with border, label, and value
