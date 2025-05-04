@@ -11,16 +11,16 @@
 
 ### 1. TFT ST7789 – ESP8266
 - Piny v zátvorke sú pre čip, nie pre nás :D
-| Komponent          | ESP8266 pin     | Popis                             |
-|--------------------|-----------------|-----------------------------------|
-| **LED**            | 3.3V            | Podsvietenie LED diód (prepojka)  |
-| **SCK**            | D5 (GPIO14)     | SPI Clock                         |
-| **MOSI**           | D7 (GPIO13)     | SPI MOSI                          |
-| **DC (Data/Cmd)**  | D1 (GPIO5)      | Data/Command riadiaci vstup       |
-| **RESET**          | D4 (GPIO2)      | Hardvérový reset displeja         |
-| **CS (Chip Sel.)** | D2 (GPIO4)      | Chip-Select                       |
-| **VCC**            | 3.3 V           | Napájanie displeja                |
-| **GND**            | GND             | Zem                               |
+| Komponent          | ESP8266 pin     | Popis                              |
+|--------------------|-----------------|----------------------------------- |
+| **LED**            | 3.3V            | Podsvietenie LED diód (prepojka)   |
+| **SCK**            | D5 (GPIO14)     | SPI Clock                          |
+| **MOSI**           | D7 (GPIO13)     | SPI MOSI                           |
+| **DC (Data/Cmd)**  | D1 (GPIO5)      | Data/Command riadiaci vstup        |
+| **RESET**          | D4 (GPIO2)      | Hardvérový reset displeja          |
+| **CS (Chip Sel.)** | D2 (GPIO4)      | Chip-Select                        |
+| **VCC**            | 3.3 V           | Napájanie displeja                 |
+| **GND**            | GND             | Zem                                |
 
 > **Upozornenie:** v pôvodnom kóde bolo
 > ```cpp
