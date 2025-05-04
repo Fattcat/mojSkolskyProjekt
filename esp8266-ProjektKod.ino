@@ -16,7 +16,7 @@
 Adafruit_ST7789 tft = Adafruit_ST7789(TFT_CS, TFT_DC, TFT_RST);
 
 // DHT sensor
-#define DHTPIN     9    // DHT11 Data Pin (GPIO12)
+#define DHTPIN     15    // DHT11 Data Pin (GPIO12)
 #define DHTTYPE    DHT11
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -39,12 +39,12 @@ void setup() {
   // Initialize TFT display
   tft.init(240, 320);         // Initialize with resolution
   tft.setRotation(2);         // Landscape orientation
-  tft.fillScreen(ST77XX_BLACK);
+  tft.fillScreen(ST77XX_BLACK); // Only once to clear screen initially
   
   // Invert display colors if necessary
   tft.invertDisplay(0);    // Set display to normal colors
 
-  drawMainMenu();
+  drawMainMenu();  // Draw the main menu once during setup
 }
 
 void loop() {
@@ -98,15 +98,21 @@ void drawMainMenu() {
 
 // Draw a labeled box with border, label, and value
 void drawSensorBox(int x, int y, int w, int h, const String& label, const String& value) {
+  // Clear the previous content of the box before drawing the new one
+  tft.fillRect(x+1, y+1, w-2, h-2, ST77XX_BLACK); // Clear the box
+  
   // Border
   tft.drawRect(x, y, w, h, ST77XX_WHITE);
+  
   // Label background
   tft.fillRect(x+1, y+1, w-2, 12, ST77XX_BLACK);
+  
   // Label text
   tft.setTextColor(ST77XX_WHITE);
   tft.setTextSize(1);
   tft.setCursor(x+4, y+3);
   tft.println(label);
+  
   // Value text
   tft.setTextColor(ST77XX_GREEN);
   tft.setTextSize(2);
