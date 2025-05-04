@@ -10,8 +10,10 @@
 ## Pripojenie pinov
 
 ### 1. TFT ST7789 – ESP8266
+- Piny v zátvorke sú pre čip, nie pre nás :D
 | Komponent          | ESP8266 pin     | Popis                             |
 |--------------------|-----------------|-----------------------------------|
+| **LED**            | 3.3V            | Podsvietenie LED diód (prepojka)  |
 | **SCK**            | D5 (GPIO14)     | SPI Clock                         |
 | **MOSI**           | D7 (GPIO13)     | SPI MOSI                          |
 | **DC (Data/Cmd)**  | D1 (GPIO5)      | Data/Command riadiaci vstup       |
@@ -20,13 +22,13 @@
 | **VCC**            | 3.3 V           | Napájanie displeja                |
 | **GND**            | GND             | Zem                               |
 
-> **Upozornenie:** v pôvodnom kóde si mal  
+> **Upozornenie:** v pôvodnom kóde bolo
 > ```cpp
 > #define TFT_CS   D2
 > #define TFT_RST  D4
 > #define TFT_DC   D1
 > ```  
-> takže som tiež D4 označil ako RESET a D1 ako DC. Ak používaš iné piny, uprav ich v kóde aj tu.
+> takže teraz to je funkčnéé :D
 
 ---
 
@@ -35,11 +37,11 @@
 |--------------|-------------|-------------------------------|
 | **VCC**      | 3.3 V       | Napájanie                     |
 | **GND**      | GND         | Zem                           |
-| **DATA**     | D6 (GPIO12)| Digitálny výstup dát          |
+| **DATA**     | D4 (GPIO2)  | Digitálny výstup dát          |
 
-> V kóde:  
+> Takže v kóde bude:  
 > ```cpp
-> #define DHTPIN D6
+> #define DHTPIN     2
 > #define DHTTYPE DHT11
 > ```
 
@@ -61,8 +63,6 @@
 | **Relé COM**         | +12 V zdroj  | Napájanie čerpadla (spoločný)  |
 | **Relé NO**          | Vodné čerpadlo | Spína sa pri aktivácii relé  |
 | **Relé GND**         | GND          | Zem relé modulu                |
-
-> V pôvodnom kóde si mal čerpadlo na `D6` – ak chceš ponechať `#define PUMP_PIN D6`, nastav tu Relé IN na D6 a v kóde zmeň `D3` na `D6`.
 
 ---
 
